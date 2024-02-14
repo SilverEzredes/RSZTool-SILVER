@@ -11,7 +11,7 @@
     <common:BindingProxy x:Key="ParentData" Data="{Binding}" />
 
     <HierarchicalDataTemplate DataType="{x:Type rsztool:RszInstance}" ItemsSource="{Binding ., Converter={StaticResource RszInstanceFieldsConverter}}">
-        <TextBlock Text="{Binding Name}">
+        <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextForeground}">
             <TextBlock.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="{res:Text Copy}" Command="{Binding Data.CopyInstance, Source={StaticResource ParentData}}" CommandParameter="{Binding}" />
@@ -22,7 +22,7 @@
     </HierarchicalDataTemplate>
 
     <HierarchicalDataTemplate DataType="{x:Type viewmodels:GameObejctComponentViewModel}" ItemsSource="{Binding Items}">
-        <TextBlock Text="{Binding Name}">
+        <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextForeground}">
             <TextBlock.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="{res:Text Copy}" Command="{Binding Data.CopyInstance, Source={StaticResource ParentData}}" CommandParameter="{Binding}" />
@@ -34,7 +34,7 @@
     </HierarchicalDataTemplate>
 
     <HierarchicalDataTemplate DataType="{x:Type viewmodels:RszFieldInstanceViewModel}" ItemsSource="{Binding Items}">
-        <TextBlock Text="{Binding Name}">
+        <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextForeground}">
             <TextBlock.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="{res:Text Copy}" Command="{Binding Data.CopyInstance, Source={StaticResource ParentData}}" CommandParameter="{Binding}" />
@@ -45,7 +45,7 @@
     </HierarchicalDataTemplate>
 
     <HierarchicalDataTemplate DataType="{x:Type viewmodels:RszFieldArrayViewModel}" ItemsSource="{Binding Items}">
-        <TextBlock Text="{Binding Name}">
+        <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextForeground}">
             <TextBlock.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="{res:Text NewItem}" Command="{Binding Data.ArrayItemNew, Source={StaticResource ParentData}}" CommandParameter="{Binding}" />
@@ -56,7 +56,7 @@
     </HierarchicalDataTemplate>
 
     <HierarchicalDataTemplate DataType="{x:Type viewmodels:RszFieldArrayInstanceItemViewModel}" ItemsSource="{Binding Items}">
-        <TextBlock Text="{Binding Name}">
+        <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextForeground}">
             <TextBlock.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="{res:Text Copy}" Command="{Binding Data.ArrayItemCopy, Source={StaticResource ParentData}}" CommandParameter="{Binding}" />
@@ -71,12 +71,12 @@
     </HierarchicalDataTemplate>
 
     <HierarchicalDataTemplate DataType="{x:Type viewmodels:BaseTreeItemViewModel}" ItemsSource="{Binding Items}">
-        <TextBlock Text="{Binding Name}"/>
+        <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextForeground}"/>
     </HierarchicalDataTemplate>
 
     <DataTemplate DataType="{x:Type viewmodels:RszFieldNormalViewModel}">
         <local:FieldValueEdit DataContext="{Binding}" ValueChanged="{Binding Data.Changed, Source={StaticResource ParentData}}"
-                              EnumDict="{Binding Data.EnumDict, Source={StaticResource ParentData}}">
+                              EnumDict="{Binding Data.EnumDict, Source={StaticResource ParentData}}" Foreground="{DynamicResource TextForeground}">
             <local:FieldValueEdit.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="{res:Text Copy}" Command="{Binding Data.CopyNormalField, Source={StaticResource ParentData}}" CommandParameter="{Binding}" />
@@ -88,7 +88,7 @@
 
     <DataTemplate DataType="{x:Type viewmodels:RszFieldArrayNormalItemViewModel}">
         <local:FieldValueEdit DataContext="{Binding}" ValueChanged="{Binding Data.Changed, Source={StaticResource ParentData}}"
-                              EnumDict="{Binding Data.EnumDict, Source={StaticResource ParentData}}">
+                              EnumDict="{Binding Data.EnumDict, Source={StaticResource ParentData}}" Foreground="{DynamicResource TextForeground}">
             <local:FieldValueEdit.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="{res:Text Copy}" Command="{Binding Data.ArrayItemCopy, Source={StaticResource ParentData}}" CommandParameter="{Binding}" />
@@ -128,7 +128,7 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         Margin="1,1,1,1"
-                        Fill="#333"
+                        Fill="#FFD6D6D6"
                         Data="M 4 0 L 8 4 L 4 8 Z"/>
                     </Grid>
                     <ControlTemplate.Triggers>

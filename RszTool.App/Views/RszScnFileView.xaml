@@ -24,7 +24,7 @@
             <common:BindingProxy x:Key="ParentData" Data="{Binding}" />
 
             <HierarchicalDataTemplate DataType="{x:Type viewmodels:GameObjectsHeader}" ItemsSource="{Binding Items}">
-                <TextBlock Text="{Binding Name}">
+                <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextForeground}">
                     <TextBlock.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="{res:Text PasteGameobject}" Command="{common:ParentBinding PasteGameObject}" />
@@ -36,7 +36,7 @@
             <HierarchicalDataTemplate DataType="{x:Type rsztool:ScnFile+FolderData}"
                                       ItemsSource="{Binding ., Converter={StaticResource ScnFolderDataSubItemsConverter}}"
                                       ItemContainerStyle="{StaticResource TreeViewItemHideIfEmpty}">
-                <TextBlock Text="{Binding Name}">
+                <TextBlock Text="{Binding Name}" Background="{DynamicResource TextForeground}">
                     <TextBlock.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="{res:Text PasteGameobject}" Command="{common:ParentBinding PasteGameObjectToFolder}" CommandParameter="{Binding}" />
@@ -48,7 +48,7 @@
             <HierarchicalDataTemplate DataType="{x:Type rsztool:ScnFile+GameObjectData}"
                                       ItemsSource="{Binding ., Converter={StaticResource ScnGameObjectDataSubItemsConverter}}"
                                       ItemContainerStyle="{StaticResource TreeViewItemHideIfEmpty}">
-                <TextBlock Text="{Binding Name}">
+                <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextForeground}">
                     <TextBlock.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="{res:Text Copy}" Command="{common:ParentBinding CopyGameObject}" CommandParameter="{Binding}" />

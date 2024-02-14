@@ -13,7 +13,7 @@
     <UserControl.Resources>
         <ResourceDictionary Source="Icons.xaml" />
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="{DynamicResource PrimaryForeground}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
@@ -26,21 +26,21 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{res:Text FindGameObjects}" Grid.Row="0" Grid.Column="0" />
+        <TextBlock Text="{res:Text FindGameObjects}" Grid.Row="0" Grid.Column="0" Foreground="{DynamicResource TextSecondaryForeground}" />
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
-            <CheckBox Content="{res:Text IncludeChildren}" IsChecked="{Binding GameObjectSearchViewModel.IncludeChildren}" />
+            <CheckBox Content="{res:Text IncludeChildren}" IsChecked="{Binding GameObjectSearchViewModel.IncludeChildren}" Foreground="{DynamicResource TextSecondaryForeground}" />
         </StackPanel>
         <Button Command="{Binding SearchGameObjects}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent">
             <Image Source="{StaticResource searchDrawingImage}" Width="16" />
         </Button>
 
-        <TextBlock Text="{res:Text GameObjectName}" Grid.Row="1" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" />
+        <TextBlock Text="{res:Text GameObjectName}" Grid.Row="1" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="{DynamicResource TextSecondaryForeground}" />
         <TextBox Text="{Binding GameObjectSearchViewModel.GameObjectName}" Grid.Row="1" Grid.Column="1" Margin="0 5 5 0" />
-        <local:TextSearchOption DataContext="{Binding GameObjectSearchViewModel.GameObjectNameOption}" Grid.Row="1" Grid.Column="2" />
+        <local:TextSearchOption DataContext="{Binding GameObjectSearchViewModel.GameObjectNameOption}" Grid.Row="1" Grid.Column="2" Background="{DynamicResource TextForeground}" />
 
-        <TextBlock Text="{res:Text Component}" Grid.Row="2" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" />
-        <local:SearchInstanceInput Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding GameObjectSearchViewModel.ComponentSearch}" />
+        <TextBlock Text="{res:Text Component}" Grid.Row="2" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="{DynamicResource TextSecondaryForeground}" />
+        <local:SearchInstanceInput Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" DataContext="{Binding GameObjectSearchViewModel.ComponentSearch}" Foreground="{DynamicResource TextSecondaryForeground}" Loaded="SearchInstanceInput_Loaded" Background="{DynamicResource PrimaryForeground}" />
 
-        <TreeView Grid.Row="4" Grid.ColumnSpan="3" SelectedItemChanged="TreeView_SelectedItemChanged" ItemsSource="{Binding SearchGameObjectList}" Margin="0 5 0 0" />
+        <TreeView Grid.Row="4" Grid.ColumnSpan="3" SelectedItemChanged="TreeView_SelectedItemChanged" ItemsSource="{Binding SearchGameObjectList}" Margin="0 5 0 0" Background="{DynamicResource SecondaryBackground}" />
     </Grid>
 </UserControl>

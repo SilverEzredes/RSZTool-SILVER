@@ -79,10 +79,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0">
-            <MenuItem Header="{res:Text File}">
-                <MenuItem Header="{res:Text Open}" Command="{Binding OpenCommand}" InputGestureText="Ctrl+O" />
-                <MenuItem Header="{res:Text OpenRecentFiles}">
+        <Menu Grid.Row="0" Background="{DynamicResource PrimaryBackground}">
+            <MenuItem Header="{res:Text File}" Foreground="{DynamicResource TextForeground}">
+                <MenuItem Header="{res:Text Open}" Command="{Binding OpenCommand}" InputGestureText="Ctrl+O" Foreground="{DynamicResource TextSecondaryForeground}" />
+                <MenuItem Header="{res:Text OpenRecentFiles}" Foreground="{DynamicResource TextSecondaryForeground}">
                     <MenuItem.Resources>
                         <CollectionViewSource x:Key="RecentFiles" Source="{Binding SaveData.RecentFiles}"/>
                         <DataTemplate x:Key="StringOnlyTemplate">
@@ -104,44 +104,58 @@
                         </Style>
                     </MenuItem.ItemContainerStyle>
                 </MenuItem>
-                <MenuItem Header="{res:Text Save}" Command="{Binding SaveCommand}" InputGestureText="Ctrl+S" />
-                <MenuItem Header="{res:Text SaveAs}" Command="{Binding SaveAsCommand}" InputGestureText="Ctrl+Shift+S" />
-                <MenuItem Header="{res:Text Reopen}" Command="{Binding ReopenCommand}" InputGestureText="Ctrl+R" />
-                <MenuItem Header="{res:Text Close}" Command="{Binding CloseCommand}" InputGestureText="Ctrl+W" />
+                <MenuItem Header="{res:Text Save}" Command="{Binding SaveCommand}" InputGestureText="Ctrl+S" Foreground="{DynamicResource TextSecondaryForeground}" />
+                <MenuItem Header="{res:Text SaveAs}" Command="{Binding SaveAsCommand}" InputGestureText="Ctrl+Shift+S" Foreground="{DynamicResource TextSecondaryForeground}" />
+                <MenuItem Header="{res:Text Reopen}" Command="{Binding ReopenCommand}" InputGestureText="Ctrl+R" Foreground="{DynamicResource SecondaryBackground}" />
+                <MenuItem Header="{res:Text Close}" Command="{Binding CloseCommand}" InputGestureText="Ctrl+W" Foreground="{DynamicResource SecondaryBackground}" />
                 <Separator />
-                <MenuItem Header="{res:Text Quit}" Command="{Binding QuitCommand}" InputGestureText="Ctrl+Q" />
+                <MenuItem Header="{res:Text Quit}" Command="{Binding QuitCommand}" InputGestureText="Ctrl+Q" Foreground="{DynamicResource TextSecondaryForeground}" />
             </MenuItem>
-            <MenuItem Header="{res:Text Tag}" Click="Tag_Click">
+            <MenuItem Header="{res:Text Tag}" Click="Tag_Click" Foreground="{DynamicResource TextForeground}">
                 <MenuItem>
-                    <MenuItem.Header><Ellipse Width="10" Height="10" Fill="Black" /></MenuItem.Header>
+                    <MenuItem.Header>
+                        <Ellipse Width="10" Height="10" Fill="Black" />
+                    </MenuItem.Header>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItem.Header><Ellipse Width="10" Height="10" Fill="Red" /></MenuItem.Header>
+                    <MenuItem.Header>
+                        <Ellipse Width="10" Height="10" Fill="Red" />
+                    </MenuItem.Header>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItem.Header><Ellipse Width="10" Height="10" Fill="Green" /></MenuItem.Header>
+                    <MenuItem.Header>
+                        <Ellipse Width="10" Height="10" Fill="Green" />
+                    </MenuItem.Header>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItem.Header><Ellipse Width="10" Height="10" Fill="Blue" /></MenuItem.Header>
+                    <MenuItem.Header>
+                        <Ellipse Width="10" Height="10" Fill="Blue" />
+                    </MenuItem.Header>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItem.Header><Ellipse Width="10" Height="10" Fill="Yellow" /></MenuItem.Header>
+                    <MenuItem.Header>
+                        <Ellipse Width="10" Height="10" Fill="Yellow" />
+                    </MenuItem.Header>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItem.Header><Ellipse Width="10" Height="10" Fill="Orange" /></MenuItem.Header>
+                    <MenuItem.Header>
+                        <Ellipse Width="10" Height="10" Fill="Orange" />
+                    </MenuItem.Header>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItem.Header><Ellipse Width="10" Height="10" Fill="Purple" /></MenuItem.Header>
+                    <MenuItem.Header>
+                        <Ellipse Width="10" Height="10" Fill="Purple" />
+                    </MenuItem.Header>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="{res:Text Help}">
-                <MenuItem Header="{res:Text About}" Command="{Binding OpenAbout}" />
+            <MenuItem Header="{res:Text Help}" Foreground="{DynamicResource TextForeground}">
+                <MenuItem Header="{res:Text About}" Command="{Binding OpenAbout}" Foreground="{DynamicResource TextSecondaryForeground}" />
             </MenuItem>
+            <DockPanel Grid.Row="1" Margin="5" HorizontalAlignment="Left" LastChildFill="False" RenderTransformOrigin="0.5,0.5">
+                <TextBlock Text="Game Version:" DockPanel.Dock="Left" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="{DynamicResource TextForeground}" />
+                <ComboBox ItemsSource="{x:Static rsztool:RszDefines.GameNames}" SelectedValue="{Binding SaveData.GameName}" Width="256" />
+            </DockPanel>
         </Menu>
-        <DockPanel Grid.Row="1" Margin="5">
-            <TextBlock Text="Game version" DockPanel.Dock="Left" Margin="0 0 5 0" VerticalAlignment="Center" />
-            <ComboBox ItemsSource="{x:Static rsztool:RszDefines.GameNames}" SelectedValue="{Binding SaveData.GameName}" />
-        </DockPanel>
         <!-- <dockablz:Layout Grid.Row="2" Margin="8">
             <dockablz:Layout.BranchTemplate>
                 <DataTemplate>
@@ -154,7 +168,7 @@
                 </TabItem>
             </dragablz:TabablzControl>
         </dockablz:Layout> -->
-        <dragablz:TabablzControl Grid.Row="2" Margin="8" Style="{StaticResource TabablzControlStyle}">
+        <dragablz:TabablzControl Grid.Row="2" Margin="8" Style="{StaticResource TabablzControlStyle}" Background="{DynamicResource SecondaryBackground}" BorderBrush="{DynamicResource SecondaryBackground}" Foreground="{DynamicResource PrimaryForeground}">
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController InterTabClient="{Binding InterTabClient}" />
             </dragablz:TabablzControl.InterTabController>

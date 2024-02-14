@@ -15,7 +15,7 @@
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="{Binding Name}" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Column="0" />
-        <TextBox Text="{Binding Value}" Grid.Column="1" />
+        <TextBox Text="{Binding Value}" Grid.Column="1" Background="{DynamicResource SecondaryBackground}" Foreground="{DynamicResource TextForeground}" BorderBrush="{DynamicResource PrimaryForeground}" />
         <TextBlock Text="{Binding Type}" Margin="10,0,0,0" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Column="2" />
     </Grid>
 </UserControl>

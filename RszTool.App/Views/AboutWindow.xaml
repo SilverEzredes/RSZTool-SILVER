@@ -7,17 +7,17 @@
         xmlns:res="clr-namespace:RszTool.App.Resources"
         mc:Ignorable="d"
         Title="{res:Text About}" Height="320" Width="480"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Background="{DynamicResource PrimaryBackground}">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Text="RszTool" FontSize="24" Margin="10" Grid.Row="0" />
-        <TextBlock Text="{res:Text AboutProjectDetail}" Grid.Row="1" />
-        <TextBlock Grid.Row="2">
-            <TextBlock Text="{res:Text ProjectRepo}" />：
+        <TextBlock Text="RszTool" FontSize="24" Margin="10" Grid.Row="0" Foreground="{DynamicResource TextForeground}" />
+        <TextBlock Text="{res:Text AboutProjectDetail}" Grid.Row="1" Foreground="{DynamicResource TextForeground}" />
+        <TextBlock Grid.Row="2" Foreground="{DynamicResource TextForeground}">
+            <TextBlock Text="{res:Text ProjectRepo}" Foreground="{DynamicResource TextForeground}" />：
             <Hyperlink NavigateUri="https://github.com/czastack/RszTool" Click="Hyperlink_Click">https://github.com/czastack/RszTool</Hyperlink>
         </TextBlock>
     </Grid>

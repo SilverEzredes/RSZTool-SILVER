@@ -21,5 +21,10 @@ namespace RszTool.App.Views
                 viewModel.SelectedItem = e.NewValue;
             }
         }
+
+        private void SearchInstanceInput_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -13,7 +13,7 @@
     <UserControl.Resources>
         <ResourceDictionary Source="Icons.xaml" />
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="{DynamicResource PrimaryForeground}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
@@ -24,16 +24,16 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{res:Text Name}" Grid.Row="0" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" />
+        <TextBlock Text="{res:Text Name}" Grid.Row="0" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="{DynamicResource TextSecondaryForeground}" />
         <TextBox Text="{Binding InstanceName}" Grid.Row="0" Grid.Column="1" Margin="0 5 5 0" />
         <local:TextSearchOption DataContext="{Binding InstanceNameOption}" Grid.Row="0" Grid.Column="2" />
 
-        <TextBlock Text="{res:Text FieldName}" Grid.Row="1" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" />
+        <TextBlock Text="{res:Text FieldName}" Grid.Row="1" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="{DynamicResource TextSecondaryForeground}" />
         <TextBox Text="{Binding FieldName}" Grid.Row="1" Grid.Column="1" Margin="0 5 5 0" />
         <local:TextSearchOption DataContext="{Binding FieldNameOption}" Grid.Row="1" Grid.Column="2" />
 
-        <TextBlock Text="{res:Text FieldValue}" Grid.Row="2" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" />
+        <TextBlock Text="{res:Text FieldValue}" Grid.Row="2" Grid.Column="0" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="{DynamicResource TextSecondaryForeground}" />
         <TextBox Text="{Binding FieldValue}" Grid.Row="2" Grid.Column="1" Margin="0 5 5 0" />
-        <local:TextSearchOption DataContext="{Binding FieldValueOption}" Grid.Row="2" Grid.Column="2" />
+        <local:TextSearchOption DataContext="{Binding FieldValueOption}" Grid.Row="2" Grid.Column="2" Background="White" />
     </Grid>
 </UserControl>
